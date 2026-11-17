@@ -1,0 +1,226 @@
+/* --- Variables de Color (Tema Vino Institucional) --- */
+:root {
+    --color-vino: #7b1d31;        /* Color vino principal */
+    --color-vino-oscuro: #50121f; /* Vino profundo para contrastes */
+    --color-fondo: #f4f1f2;       /* Fondo general suave */
+    --color-texto: #2c2c2c;       /* Texto oscuro legible */
+    --color-blanco: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1.5rem;
+}
+
+/* --- Contenedor tipo "Mockup" de navegador más amplio --- */
+.browser-mockup {
+    background-color: var(--color-blanco);
+    width: 100%;
+    max-width: 1150px;
+    border-radius: 14px;
+    box-shadow: 0 15px 35px rgba(123, 29, 49, 0.18);
+    overflow: hidden;
+    border: 1px solid rgba(123, 29, 49, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Barra Superior (Toolbar) --- */
+.browser-toolbar {
+    background-color: var(--color-vino);
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.browser-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.dot.red { background-color: #ff5f56; }
+.dot.yellow { background-color: #ffbd2e; }
+.dot.green { background-color: #27c93f; }
+
+/* Menú de navegación superior */
+.browser-menu {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.browser-menu a {
+    color: var(--color-blanco);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: opacity 0.2s ease, border-bottom 0.2s ease;
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+}
+
+.browser-menu a:hover {
+    opacity: 0.85;
+    border-bottom: 2px solid var(--color-blanco);
+}
+
+/* --- CONTENEDOR PRINCIPAL EN DOS COLUMNAS SEPARADAS --- */
+.hero-split-container {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr; /* Izquierda más espacio para texto, derecha para imagen */
+    align-items: center;
+    gap: 3rem;
+    padding: 3.5rem 3rem;
+    background: linear-gradient(135deg, var(--color-blanco) 0%, #faf5f6 100%);
+}
+
+/* --- Columna Izquierda: Títulos y Descripción (Hero Content) --- */
+.hero-content {
+    text-align: left;
+    padding: 0;
+}
+
+.subtitle {
+    font-size: 1.05rem;
+    color: var(--color-vino);
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+}
+
+.title-main {
+    font-size: 2.3rem;
+    color: var(--color-texto);
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+.title-highlight {
+    display: inline-block;
+    font-size: 2.3rem;
+    color: var(--color-vino);
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    line-height: 1.15;
+}
+
+.description {
+    font-size: 1.05rem;
+    color: #555555;
+    max-width: 100%;
+    line-height: 1.6;
+}
+
+/* --- Columna Derecha: Imagen Rectangular Grande y Separada --- */
+.image-section-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.rectangle-image-container {
+    width: 100%;
+    height: 340px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 3px solid var(--color-vino);
+    box-shadow: 0 10px 25px rgba(123, 29, 49, 0.2);
+    background-color: var(--color-blanco);
+}
+
+.rectangle-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Evita que la foto de palacio se deforme */
+    transition: transform 0.3s ease;
+}
+
+.rectangle-image-container img:hover {
+    transform: scale(1.02); /* Sutil efecto de acercamiento al pasar el cursor */
+}
+
+/* --- Pie de Página (Footer y Logos) --- */
+footer {
+    background-color: #faf5f6;
+    border-top: 1px solid rgba(123, 29, 49, 0.1);
+    padding: 1.2rem 2.5rem;
+}
+
+.footer-logos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    font-size: 0.8rem;
+    color: var(--color-vino-oscuro);
+}
+
+.logo-gov, .logo-state {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-logos img {
+    max-height: 45px;
+    width: auto;
+    object-fit: contain;
+}
+
+.slogan {
+    font-style: italic;
+    font-size: 0.75rem;
+    opacity: 0.8;
+}
+
+/* --- Ajuste Responsivo para Celulares y Tablets --- */
+@media (max-width: 850px) {
+    .hero-split-container {
+        grid-template-columns: 1fr; /* Cambia a una sola columna vertical */
+        text-align: center;
+        padding: 2.5rem 1.5rem;
+        gap: 2rem;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .browser-toolbar {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .browser-menu {
+        justify-content: center;
+    }
+
+    .rectangle-image-container {
+        height: 250px; /* Se ajusta mejor en pantallas móviles */
+    }
+
+    .footer-logos {
+        flex-direction: column;
+        text-align: center;
+    }
+}

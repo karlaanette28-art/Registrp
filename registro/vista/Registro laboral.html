@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Registro Laboral</title>
+
+    <link rel="stylesheet" href="../modelo/laboral.css">
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <header>
+            <nav class="navbar">
+                <a href="#" class="logo">Menú</a>
+
+                <button class="menu-toggle" id="menu-toggle">
+                    ☰
+                </button>
+
+                <div class="browser-menu" id="nav-links">
+                    <a href="Registro de personas.html">
+                        <button>
+                            <h2>Regresar</h2>
+                        </button>
+                    </a>
+                </div>
+            </nav>
+        </header>
+
+
+        <main>
+
+            <h1>Registro Laboral</h1>
+
+        <form action="../controlador/Registro laboral.php" method="POST">
+
+<!-- DATOS DEL EMPLEADO -->
+<!-- ================================= -->
+
+<section class="formulario">
+
+    <h2>Datos del empleado</h2>
+
+    <div class="grid-formulario">
+
+        <!-- ID EMPLEADO -->
+
+        <div class="campo">
+
+            <label for="id_empleado">
+                ID Empleado
+            </label>
+
+            <input
+                type="number"
+                id="id_empleado"
+                name="ID_Empleado"
+                placeholder="Ej. 12345 (NUMERO)"
+                class="requerido"
+                required
+            >
+
+            <span class="mensaje-error">
+                Es obligatorio llenar este campo.
+            </span>
+
+        </div>
+
+
+        <!-- GÉNERO -->
+
+        <div class="campo campo-genero">
+
+            <label>
+                Género
+            </label>
+
+            <div class="opciones-radio">
+
+                <label>
+
+                    <input
+                        type="radio"
+                        name="Genero"
+                        value="Masculino"
+                        required
+                    >
+
+                    Masculino
+
+                </label>
+
+
+                <label>
+
+                    <input
+                        type="radio"
+                        name="Genero"
+                        value="Femenino"
+                    >
+
+                    Femenino
+
+                </label>
+
+            </div>
+
+        </div>
+
+
+        <!-- ISSEMYM (Corregido el name) -->
+
+        <div class="campo">
+
+            <label for="issemy">
+                ISSEMYM
+            </label>
+
+            <input
+                type="number"
+                id="issemy"
+                name="ISSEMYM"
+                placeholder="Número ISSEMYM (NUMERO)"
+                class="requerido"
+                required
+            >
+
+            <span class="mensaje-error">
+                Es obligatorio llenar este campo.
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================= -->
+<!-- UNIDAD ORGANIZATIVA -->
+<!-- ================================= -->
+
+<section class="formulario">
+
+    <h2>Unidad organizativa</h2>
+
+    <div class="grid-formulario">
+
+
+        <!-- ID UNIDAD -->
+
+        <div class="campo">
+
+            <label for="id_unidad">
+                ID Unidad Org
+            </label>
+
+            <input
+                type="number"
+                id="id_unidad"
+                name="ID_Unidad_Org"
+                placeholder="ID de unidad (NUMERO)"
+                class="requerido"
+                required
+            >
+
+            <span class="mensaje-error">
+                Es obligatorio llenar este campo.
+            </span>
+
+        </div>
+
+        <!--UNIDAD ORG-->
+
+        <div class="campo">
+
+            <label for="unidad_org_input">Unidad ORG:</label>
+            <input list="lista-unidad-org" id="unidad_org_input" name="Unidad_Org" placeholder="Escribe o selecciona una opción">
+
+            <datalist id="lista-unidad-org">
+                <option value="">Selecciona una opción</option>
+                <option value="DEPARTAMENTO DE PRECIOS Y TARIFAS">DEPARTAMENTO DE PRECIOS Y TARIFAS</option>
+                <option value="DIRECCIÓN DE ESTUDIOS DE POLÍTICA DE INGRESOS">DIRECCIÓN DE ESTUDIOS DE POLÍTICA DE INGRESOS</option>
+                <option value="DIRECCIÓN DE INGRESOS COORDINADOS">DIRECCIÓN DE INGRESOS COORDINADOS</option>
+                <option value="OFICINA DEL C DIRECTOR GENERAL">OFICINA DEL C DIRECTOR GENERAL</option>
+                <option value="OFICINA DEL C SUBSECRETARIO">OFICINA DEL C SUBSECRETARIO</option>
+                <option value="SECRETARÍA PARTICULAR">SECRETARÍA PARTICULAR</option>
+                <option value="SUBDIRECCIÓN DE EVALUACIÓN DE PROYECTOS">SUBDIRECCIÓN DE EVALUACIÓN DE PROYECTOS</option>
+                <option value="SUBDIRECCIÓN DE INGRESOS FEDERALES">SUBDIRECCIÓN DE INGRESOS FEDERALES</option>
+                <option value="SUBDIRECCIÓN DE OPERACIÓN Y CONTROL">SUBDIRECCIÓN DE OPERACIÓN Y CONTROL</option>
+                <option value="SUBDIRECCIÓN DE PARTICIPACIONES A MUNICIPIOS">SUBDIRECCIÓN DE PARTICIPACIONES A MUNICIPIOS</option>
+                <option value="SUBDIRECCIÓN JURÍDICA">SUBDIRECCIÓN JURÍDICA</option>
+                <option value="UATA">UATA</option>
+                <option value="UNIDAD DE APOYO TÉCNICO ADMINISTRATIVO">UNIDAD DE APOYO TÉCNICO ADMINISTRATIVO</option>
+                <option value="UNIDAD DE SISTEMAS E INFORMÁTICA">UNIDAD DE SISTEMAS E INFORMÁTICA</option>
+            </datalist>
+
+            <span class="mensaje-error">
+                Es obligatorio llenar este campo.
+            </span>
+
+        </div>
+
+        <!-- DIRECCIÓN DE AREA DE TRABAJO  -->
+
+        <div class="campo">
+            <label for="tipo_servidor">Direccion de area de Trabajo:</label>
+            <input list="lista-servidor" id="tipo_servidor" name="Direccion_de_area_de_Trabajo" placeholder="Escribe o selecciona una opción">
+            
+            <datalist id="lista-servidor">
+                <option value="INGRESOS"></option>
+            </datalist>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================= -->
+<!-- PLAZA Y PUESTO -->
+<!-- ================================= -->
+
+<section class="formulario">
+
+    <h2>Plaza y puesto</h2>
+
+    <div class="grid-formulario">
+
+
+        <!-- ID PLAZA -->
+
+        <div class="campo">
+
+            <label for="id_plaza">
+                ID Plaza
+            </label>
+
+            <input
+                type="text"
+                id="id_plaza"
+                name="ID_de_Plaza"
+                placeholder="ID de plaza (TEXTO/NUMERO)"
+                class="requerido"
+                required
+            >
+
+            <span class="mensaje-error">
+                Es obligatorio llenar este campo.
+            </span>
+
+        </div>
+
+        <!-- TIPO DE PLAZA (Corregido el name) -->
+        <div class="campo">
+            <label for="tipo_plaza">Tipo Plaza GENERAL/CONFIANZA:</label>
+            <input list="lista-plazas" id="tipo_plaza" name="Tipo_de_Plaza" placeholder="Escribe o selecciona una opción">
+            
+            <datalist id="lista-plazas">
+                <option value="GENERAL"></option>
+                <option value="CONFIANZA"></option>
+            </datalist>
+        </div>
+
+        <!-- TIPO DE SERVICIO PÚBLICO -->
+        <div class="campo">
+            <label for="tipo_servidor">Tipo de Servidor Público:</label>
+            <input list="lista-servidor" id="tipo_servidor" name="Tipo_de_Servicio_Publico" placeholder="Escribe o selecciona una opción">
+            
+            <datalist id="lista-servidor">
+                <option value="SUTEYM"></option>
+                <option value="Burócratas No Sindicaliza"></option>
+            </datalist>
+        </div>
+
+
+        <!-- ID PUESTO -->
+
+        <div class="campo">
+
+            <label for="id_puesto">
+                ID Puesto
+            </label>
+
+            <input
+                type="text"
+                id="id_puesto"
+                name="ID_Puesto"
+                placeholder="ID del puesto"
+                class="requerido"
+                required
+            >
+
+            <span class="mensaje-error">
+                Es obligatorio llenar este campo.
+            </span>
+
+        </div>
+
+        <!-- NOMBRE PUESTO (Corregido el name) -->
+
+        <div class="campo">
+
+            <label for="nombre_puesto">Nombre Puesto:</label>
+            <input list="lista-puestos" id="nombre_puesto" name="Nombre_Puesto" placeholder="Escribe o selecciona una opción">
+
+            <datalist id="lista-puestos">
+                <option value="">Selecciona una opción</option>
+                <option value="Almacenista">Almacenista</option>
+                <option value="Analista A">Analista A</option>
+                <option value="Analista Auxiliar">Analista Auxiliar</option>
+                <option value="Analista B">Analista B</option>
+                <option value="Analista C">Analista C</option>
+                <option value="Analista D">Analista D</option>
+                <option value="Analista Especializada o A">Analista Especializada o A</option>
+                <option value="Analista Especializada o B">Analista Especializada o B</option>
+                <option value="Archivista">Archivista</option>
+                <option value="Auxiliar Administrativa o de Oficina de Servidora or Pública o">Auxiliar Administrativa o de Oficina de Servidora or Pública o</option>
+                <option value="Choferesa Chofer Asistente">Choferesa Chofer Asistente</option>
+                <option value="Choferesa Chofer de Servidora or Pública o Superiora or">Choferesa Chofer de Servidora or Pública o Superiora or</option>
+                <option value="Directora or General">Directora or General</option>
+                <option value="Directora or de Área">Directora or de Área</option>
+                <option value="Jefa e A de Proyecto">Jefa e A de Proyecto</option>
+                <option value="Jefa e B de Proyecto">Jefa e B de Proyecto</option>
+                <option value="Jefa e de Departamento">Jefa e de Departamento</option>
+                <option value="Jefa e de Unidad de Dirección General">Jefa e de Unidad de Dirección General</option>
+                <option value="Jefa e de Unidad de Subsecretaría">Jefa e de Unidad de Subsecretaría</option>
+                <option value="Jefa e de Área">Jefa e de Área</option>
+                <option value="Lideresa Líder A de Proyecto">Lideresa Líder A de Proyecto</option>
+                <option value="Líderesa Líder B de Proyecto">Líderesa Líder B de Proyecto</option>
+                <option value="Secretaria o A">Secretaria o A</option>
+                <option value="Secretaria o B">Secretaria o B</option>
+                <option value="Secretaria o C">Secretaria o C</option>
+                <option value="Secretaria o D">Secretaria o D</option>
+                <option value="Secretaria o E">Secretaria o E</option>
+                <option value="Secretaria o Particular de Directora or General">Secretaria o Particular de Directora or General</option>
+                <option value="Secretaria o de Subsecretaria o">Secretaria o de Subsecretaria o</option>
+                <option value="Subdirectora or">Subdirectora or</option>
+                <option value="Subsecretaria o">Subsecretaria o</option>
+                <option value="UATA">UATA</option>
+            </datalist>
+
+            <span class="mensaje-error">
+                Es obligatorio llenar este campo.
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================= -->
+<!-- CENTRO DE TRABAJO -->
+<!-- ================================= -->
+
+<section class="formulario">
+
+    <h2>Centro de trabajo</h2>
+
+    <div class="grid-formulario">
+
+
+        <!-- CCT -->
+
+        <div class="campo">
+
+            <label for="cct">
+                CCT
+            </label>
+
+            <input
+                type="text"
+                id="cct"
+                name="CCT"
+                placeholder="Clave del centro de trabajo"
+                class="requerido"
+                maxlength="15"
+                style="text-transform: uppercase;"
+                required
+            >
+
+            <span class="mensaje-error">
+                Es obligatorio llenar este campo.
+            </span>
+
+        </div>
+
+
+        <!-- LUGAR DE TRABAJO -->
+
+        <div class="campo">
+                
+            <label for="lugar_trabajo">Lugar de Trabajo:</label>
+            <input list="lugares-trabajo" id="lugar_trabajo" name="Lugar_de_Trabajo" placeholder="Escribe o selecciona una opción">
+
+            <datalist id="lugares-trabajo">
+                <option value="">Selecciona una opción</option>
+                <option value="COODINACION GENERAL DE COMUNICACION SOCI">COODINACION GENERAL DE COMUNICACION SOCI</option>
+                <option value="DELEGACION ADMINISTRATIVA">DELEGACION ADMINISTRATIVA</option>
+                <option value="DEPTO PRECIOS TARIFAS">DEPTO PRECIOS TARIFAS</option>
+                <option value="DIR ESTUD POLITICA ING">DIR ESTUD POLITICA ING</option>
+                <option value="DIR INGRESOS COORDINADOS">DIR INGRESOS COORDINADOS</option>
+                <option value="OFICINA DEL C. SUBSECRETARIO">OFICINA DEL C. SUBSECRETARIO</option>
+                <option value="OFNA C DIR GRAL POLITICA">OFNA C DIR GRAL POLITICA</option>
+                <option value="SECRETARIA PARTICULAR DIR G P F">SECRETARIA PARTICULAR DIR G P F</option>
+                <option value="SUB PARTICIPACIONES MUNIC">SUB PARTICIPACIONES MUNIC</option>
+                <option value="SUBDIR EVALUACION PROY">SUBDIR EVALUACION PROY</option>
+                <option value="SUBDIR INGRESOS FEDERALES">SUBDIR INGRESOS FEDERALES</option>
+                <option value="SUBDIRECCION JURIDICA">SUBDIRECCION JURIDICA</option>
+                <option value="UATA">UATA</option>
+                <option value="UNIDAD DE SISTEMAS E INFORMÁTICA">UNIDAD DE SISTEMAS E INFORMÁTICA</option>
+                
+            </datalist>
+
+            <span class="mensaje-error">
+                Es obligatorio llenar este campo.
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================= -->
+<!-- FECHAS -->
+<!-- ================================= -->
+
+<section class="formulario">
+
+    <h2>Fechas</h2>
+
+    <div class="grid-formulario">
+
+
+        <!-- FECHA DE INGRESO AL GEM -->
+
+        <div class="campo">
+
+            <label for="fecha_ingreso">
+                Fecha de ingreso al GEM
+            </label>
+
+            <input
+                type="date"
+                id="fecha_ingreso"
+                name="Fecha_de_Ingreso_al_GEM"
+                class="requerido"
+                required
+            >
+
+            <span class="mensaje-error">
+                Es obligatorio llenar este campo.
+            </span>
+
+        </div>
+
+
+        <!-- FECHA DE QUINSENAS -->
+
+        <div class="campo">
+
+            <label for="fecha_quinsenas">
+                Fecha de Quinsenas
+            </label>
+
+            <input
+                type="date"
+                id="fecha_quinsenas"
+                name="Fecha_de_Quinsenas"
+                class="requerido"
+                required
+            >
+
+            <span class="mensaje-error">
+                Es obligatorio llenar este campo.
+            </span>
+
+        </div>
+
+
+        <!-- FECHA ULTIMO MOVIMIENTO (Corregido el name) -->
+
+        <div class="campo">
+
+            <label for="fecha_ultimo">
+                Fecha Último Movimiento
+            </label>
+
+            <input
+                type="date"
+                id="fecha_ultimo"
+                name="Fecha_de_Ultimo_Movimiento"
+                class="requerido"
+                required
+            >
+
+            <span class="mensaje-error">
+                Es obligatorio llenar este campo.
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+                <!-- ================================= -->
+                <!-- BOTONES -->
+                <!-- ================================= -->
+
+                <div class="botones">
+
+                    <button
+                        type="submit"
+                        class="btn-guardar">
+                        Guardar Registro
+                    </button>
+
+                    <button
+                        type="reset"
+                        class="btn-limpiar">
+                        Limpiar
+                    </button>
+
+    
+
+
+            </form>
+
+        </main>
+
+    </div>
+
+
+</body>
+
+</html>
